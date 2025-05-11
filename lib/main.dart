@@ -40,10 +40,10 @@ class ConverterState extends State<MeasuresConverter> {
           _resultMessage =
               '$fromUnitName could not be converted to $toUnitName';
         } else {
-          _resultMessage = '$inputValue $fromUnitName are $result $toUnitName';
+          double finalResult = double.parse(result.toStringAsFixed(4));
+          _resultMessage = '$inputValue $fromUnitName are $finalResult $toUnitName';
         }
       });
-      _formGlobalKey.currentState!.reset();
     } else {
       setState(() {
         _resultMessage = '';

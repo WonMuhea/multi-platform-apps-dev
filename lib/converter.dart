@@ -17,11 +17,11 @@ class Converter {
     [null, null, null, null, null, null, null, null, null, 3.7854, 1],
   ];
 
-  dynamic convert(MeasureUnit from, MeasureUnit to, double val) {
+  double? convert(MeasureUnit from, MeasureUnit to, double val) {
     dynamic conversionFactor = converterMatrix[from.matrixPosition][to.matrixPosition];
     if (conversionFactor == null) {
       return null;
     }
-    return val * conversionFactor;
+    return val * conversionFactor.toDouble();
   }
 }
