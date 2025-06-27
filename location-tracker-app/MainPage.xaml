@@ -1,0 +1,38 @@
+﻿<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+    x:Class="LocationTrackerApp.MainPage"
+    Title="Live Location Tracker">
+
+    <Grid>
+        <!-- MAP VIEW -->
+        <maps:Map x:Name="MyMap"
+          IsShowingUser="True"
+          MapType="Street"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand" />
+
+
+        <!-- BUTTON DOCK -->
+        <StackLayout Orientation="Horizontal"
+                     Padding="10"
+                     Spacing="20"
+                     BackgroundColor="#EEEEEE"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="End"
+                     HeightRequest="60">
+            <Button Text="Start Tracking"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnStartTrackingClicked"
+                    BackgroundColor="#007AFF"
+                    TextColor="White" />
+
+            <Button Text="Clear Data"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnClearDataClicked"
+                    BackgroundColor="DarkRed"
+                    TextColor="White" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
